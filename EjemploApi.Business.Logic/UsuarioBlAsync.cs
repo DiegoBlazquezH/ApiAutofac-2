@@ -5,28 +5,36 @@ using System.Text;
 using System.Threading.Tasks;
 using EjemploApi.Common.Logic;
 using EjemploApi.DataAccess.Redis;
+using EjemploApi.DataAccess.WSVueling;
 
 namespace EjemploApi.Business.Logic
 {
     public class UsuarioBlAsync : IUsuarioBlAsync
     {
-        private readonly IGetAsync<Usuario> _get;
-        private readonly ISetAsync<Usuario> _set;
+        private readonly IGetAsync<Usuario> Get;
+        private readonly ISetAsync<Usuario> Set;
+        private readonly IWSVueling<Usuario> WsVueling;
 
-        public UsuarioBlAsync(IGetAsync<Usuario> get, ISetAsync<Usuario> set)
+        public UsuarioBlAsync(IGetAsync<Usuario> get, ISetAsync<Usuario> set, IWSVueling<Usuario> wsVueling)
         {
-            _get = get;
-            _set = set;
+            this.Get = get;
+            this.Set = set;
+            this.WsVueling = wsVueling;
         }
 
-        public Task<Usuario> GetAsync(string key)
+        public async Task<Usuario> GetAsync(string key)
         {
-            return _get.GetAsync(key);
+            return await this.Get.GetAsync(key);
         }
 
-        public Task<Usuario> SetAsync(Usuario usuario, string key)
+        public async Task<Usuario> SetAsync(Usuario usuario, string key)
         {
-            return _set.AddAsync(usuario, key);
+            return await this.Set.AddAsync(usuario, key);
+        }
+
+        public async Task<Usuario> GetAsyncWS()
+        {
+            return await this.WsVueling.GetAsync();
         }
     }
 }

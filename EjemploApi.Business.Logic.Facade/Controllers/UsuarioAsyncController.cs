@@ -10,12 +10,34 @@ namespace EjemploApi.Business.Logic.Facade.Controllers
 {
     public class UsuarioAsyncController : ApiController
     {
-        private readonly IUsuarioBlAsync _usuarioBlAsync;
+        private readonly IUsuarioBlAsync UsuarioBlAsync;
         private readonly ILogger logger = new Logger(MethodBase.GetCurrentMethod().DeclaringType);
 
         public UsuarioAsyncController(IUsuarioBlAsync usuarioBlAsync)
         {
-            this._usuarioBlAsync = usuarioBlAsync;
+            this.UsuarioBlAsync = usuarioBlAsync;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAsyncWs()
+        {
+            try
+            {
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " empieza, realizando Get en WS");
+                var result = await this.UsuarioBlAsync.GetAsyncWS();
+                logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + "devuelve: " + result.ToString());
+                if (result == null) return NotFound();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                logger.Exception(ex);
+                return InternalServerError();
+            }
         }
 
         /// <summary>
@@ -29,7 +51,7 @@ namespace EjemploApi.Business.Logic.Facade.Controllers
             try
             {
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " empieza, realizando Get, key: " + key);
-                var result = await this._usuarioBlAsync.GetAsync(key);
+                var result = await this.UsuarioBlAsync.GetAsync(key);
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + "devuelve: " + result.ToString());
                 if (result == null) return NotFound();
                 return Ok(result);
@@ -53,7 +75,7 @@ namespace EjemploApi.Business.Logic.Facade.Controllers
             try
             {
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " empieza, Usuario: " + usuario.ToString() + ", Key: " + key);
-                var result = await this._usuarioBlAsync.SetAsync(usuario, key);
+                var result = await this.UsuarioBlAsync.SetAsync(usuario, key);
                 logger.Debug(MethodBase.GetCurrentMethod().DeclaringType.Name + " termina, Usuario insertado: " + result.ToString());
                 return Ok(result);
             }
@@ -64,6 +86,10 @@ namespace EjemploApi.Business.Logic.Facade.Controllers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IHttpActionResult Status()
         {

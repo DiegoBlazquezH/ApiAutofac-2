@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EjemploApi.AutofacConfiguration
 {
-    class UsuarioBlModule : Module
+    class WSVuelingModules : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

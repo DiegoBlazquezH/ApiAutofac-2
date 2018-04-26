@@ -1,10 +1,6 @@
 ﻿using EjemploApi.Common.Logic;
-using EjemploApi.DataAccess.Redis;
 using Newtonsoft.Json;
 using StackExchange.Redis;
-using System;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace EjemploApi.DataAccess.Redis

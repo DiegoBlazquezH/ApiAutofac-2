@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace EjemploApi.DataAccess.WSVueling
 {
-    public interface IWSVueling
+    public interface IWSVueling<T> where T : IModel
     {
-        Task<Usuario> GetAsync();
-        Task<Usuario> SetAsync(Usuario usuario);
+        Task<T> GetAsync();
+        Task<T> SetAsync(T entity);
     }
 }

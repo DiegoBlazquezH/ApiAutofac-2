@@ -14,7 +14,9 @@ namespace EjemploApi.AutofacConfiguration
 
             builder.RegisterModule(new RedisModule());
 
-            builder.RegisterModule(new UsuarioBlModule());
+            builder.RegisterModule(new WSVuelingModules());
+
+            builder.RegisterModule(new WSVuelingModules());
 
             return builder.Build();
         }

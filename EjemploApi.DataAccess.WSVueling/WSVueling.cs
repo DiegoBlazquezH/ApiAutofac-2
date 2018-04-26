@@ -6,26 +6,24 @@ using static EjemploApi.DataAccess.WSVueling.WSConfiguration;
 
 namespace EjemploApi.DataAccess.WSVueling
 {
-    public class WSVueling : IWSVueling
+    public class WSVueling<T> : IWSVueling<T> where T : IModel
     {
         private readonly HttpClient Client;
 
         public WSVueling(HttpClient Client)
         {
-            //Configuramos el cliente
             this.Client = ServiceConfiguration.InitClient(this.Client);
         }
 
-        public async Task<Usuario> GetAsync()
+        public async Task<T> GetAsync()
         {
             try
             {
-
-                var response = await Client.GetAsync($"/api/UsuarioAsync/GetAsync/");
+                var response = await Client.GetAsync($"/api/UsuarioAsync/GetAsync?key=prueba1");
                 response.EnsureSuccessStatusCode();
                 using (HttpContent Content = response.Content)
                 {
-                    return await Content.ReadAsAsync<Usuario>();
+                    return await Content.ReadAsAsync<T>();
                 }
             }
             catch (Exception)
@@ -34,16 +32,15 @@ namespace EjemploApi.DataAccess.WSVueling
             }
         }
 
-        public async Task<Usuario> SetAsync(Usuario usuario)
+        public async Task<T> SetAsync(T entity)
         {
             try
             {
-
-                var response = await Client.PostAsJsonAsync<Usuario>($"/api/UsuarioAsync/SetAsync/", usuario);
+                var response = await Client.PostAsJsonAsync<T>($"/api/UsuarioAsync/SetAsync?key=prueba3", entity);
                 response.EnsureSuccessStatusCode();
                 using (HttpContent Content = response.Content)
                 {
-                    return await Content.ReadAsAsync<Usuario>();
+                    return await Content.ReadAsAsync<T>();
                 }
             }
             catch (Exception)

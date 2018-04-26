@@ -1,16 +1,15 @@
 ﻿using Autofac;
-using EjemploApi.DataAccess.Redis;
+using EjemploApi.DataAccess.WSVueling;
 
 namespace EjemploApi.AutofacConfiguration
 {
-    class RedisModule : Module
+    class WSVuelingModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
             builder
-                .RegisterGeneric(typeof(RedisDaoAsync<>))
-                .As(typeof(IGetAsync<>))
-                .As(typeof(ISetAsync<>))
+                .RegisterGeneric(typeof(WSVueling<>))
+                .As(typeof(IWSVueling<>))
                 .InstancePerRequest();
 
             base.Load(builder);

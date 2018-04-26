@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EjemploApi.DataAccess.WSVueling\EjemploApi.DataAccess.WSVueling.csproj">
+      <Project>{FFC9F93F-F899-4940-8926-DE585D9B6A2F}</Project>
+      <Name>EjemploApi.DataAccess.WSVueling</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EjemploApli.Common.Logic\EjemploApi.Common.Logic.csproj">
       <Project>{F6FE4521-0060-4F39-BF45-36C57A0FD2DF}</Project>
       <Name>EjemploApi.Common.Logic</Name>

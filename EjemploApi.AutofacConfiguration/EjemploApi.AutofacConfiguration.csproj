@@ -59,6 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RedisModule.cs" />
     <Compile Include="UsuarioBlModule.cs" />
+    <Compile Include="WSVuelingModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -68,6 +69,10 @@
     <ProjectReference Include="..\EjemploApi.Business.Logic\EjemploApi.Business.Logic.csproj">
       <Project>{deeff895-5c53-40c7-803c-8009ee3a05a1}</Project>
       <Name>EjemploApi.Business.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EjemploApi.DataAccess.WSVueling\EjemploApi.DataAccess.WSVueling.csproj">
+      <Project>{FFC9F93F-F899-4940-8926-DE585D9B6A2F}</Project>
+      <Name>EjemploApi.DataAccess.WSVueling</Name>
     </ProjectReference>
     <ProjectReference Include="..\EjemploApli.Common.Logic\EjemploApi.Common.Logic.csproj">
       <Project>{f6fe4521-0060-4f39-bf45-36c57a0fd2df}</Project>

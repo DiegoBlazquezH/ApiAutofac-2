@@ -47,8 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IGet.cs" />
-    <Compile Include="ISet.cs" />
+    <Compile Include="IGetAsync.cs" />
+    <Compile Include="ISetAsync.cs" />
     <Compile Include="RedisConfiguration.cs" />
     <Compile Include="RedisDaoAsync.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

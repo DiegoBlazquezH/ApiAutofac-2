@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{D2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{72C3D656-9AF2-4C92-B74A-D28B848E94A4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DaoRedis", "DaoRedis", "{D4D6EF57-D6DD-43D1-8A34-F6C54047AE27}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dao", "Dao", "{D4D6EF57-D6DD-43D1-8A34-F6C54047AE27}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploApi.Common.Logic", "EjemploApli.Common.Logic\EjemploApi.Common.Logic.csproj", "{F6FE4521-0060-4F39-BF45-36C57A0FD2DF}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutofacConfiguration", "AutofacConfiguration", "{B29D44A7-7F09-4B5B-8DC3-28235EF87343}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploApi.AutofacConfiguration", "EjemploApi.AutofacConfiguration\EjemploApi.AutofacConfiguration.csproj", "{A101E3C4-FBC8-4164-B66F-1028E154F33B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploApi.DataAccess.WSVueling", "EjemploApi.DataAccess.WSVueling\EjemploApi.DataAccess.WSVueling.csproj", "{FFC9F93F-F899-4940-8926-DE585D9B6A2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +115,22 @@ Global
 		{A101E3C4-FBC8-4164-B66F-1028E154F33B}.Release|x64.Build.0 = Release|Any CPU
 		{A101E3C4-FBC8-4164-B66F-1028E154F33B}.Release|x86.ActiveCfg = Release|Any CPU
 		{A101E3C4-FBC8-4164-B66F-1028E154F33B}.Release|x86.Build.0 = Release|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Debug|ARM.Build.0 = Debug|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Debug|x64.Build.0 = Debug|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Debug|x86.Build.0 = Debug|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Release|ARM.ActiveCfg = Release|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Release|ARM.Build.0 = Release|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Release|x64.ActiveCfg = Release|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Release|x64.Build.0 = Release|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Release|x86.ActiveCfg = Release|Any CPU
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +141,7 @@ Global
 		{DEEFF895-5C53-40C7-803C-8009EE3A05A1} = {D26B4BA4-B675-46EB-9575-801D0A540383}
 		{76AE360A-AFAB-4F2E-98EA-91E7A25DA9D8} = {D26B4BA4-B675-46EB-9575-801D0A540383}
 		{A101E3C4-FBC8-4164-B66F-1028E154F33B} = {B29D44A7-7F09-4B5B-8DC3-28235EF87343}
+		{FFC9F93F-F899-4940-8926-DE585D9B6A2F} = {D4D6EF57-D6DD-43D1-8A34-F6C54047AE27}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {067C7946-6585-4011-AA50-834D76ADD618}
